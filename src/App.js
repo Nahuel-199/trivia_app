@@ -1,8 +1,8 @@
 import { useState } from "react";
-import "./app.css";
 import Trivia from "./componentes/Trivia";
 import Start from "./componentes/Start";
 import Timer from "./componentes/Timer";
+import "./app.css";
 
 function App() {
   const [username, setUsername] = useState(null);
@@ -233,6 +233,118 @@ function App() {
         },
       ],
     },
+    {
+      id: 11,
+      question: "¿En que pelicula las mascotas hablan?",
+      answers: [
+        {
+          text: "ToyStory",
+          correct: false,
+        },
+        {
+          text: "Naruto",
+          correct: false,
+        },
+        {
+          text: "Mascotas",
+          correct: true,
+        },
+        {
+          text: "Cars",
+          correct: false,
+        },
+      ],
+    },
+    {
+      id: 12,
+      question:
+        "¿En que anime el personaje principal tiene el color de pelo amarillo?",
+      answers: [
+        {
+          text: "Blech",
+          correct: false,
+        },
+        {
+          text: "One Piece",
+          correct: false,
+        },
+        {
+          text: "Pokemon",
+          correct: false,
+        },
+        {
+          text: "Naruto",
+          correct: true,
+        },
+      ],
+    },
+    {
+      id: 13,
+      question:
+        "¿En Naruto Shippuden a que personaje le dice Madara que es el mas fuerte?",
+      answers: [
+        {
+          text: "Kakashi",
+          correct: false,
+        },
+        {
+          text: "Sakura",
+          correct: false,
+        },
+        {
+          text: "Guy",
+          correct: true,
+        },
+        {
+          text: "Naruto",
+          correct: false,
+        },
+      ],
+    },
+    {
+      id: 14,
+      question: "¿Quien mata a Itachi Uchiha?",
+      answers: [
+        {
+          text: "Naruto",
+          correct: false,
+        },
+        {
+          text: "Madara",
+          correct: false,
+        },
+        {
+          text: "Sasuke",
+          correct: false,
+        },
+        {
+          text: "Muere porque el quiere sino nadie lo mata",
+          correct: true,
+        },
+      ],
+    },
+    {
+      id: 15,
+      question: "¿Como se llama la aldea donde vive Naruto?",
+      answers: [
+        {
+          text: "Aldea de la hoja",
+          correct: true,
+        },
+        {
+          text: "Aldea de la niebla",
+          correct: false,
+        },
+        {
+          text: "Aldea del fuego",
+          correct: false,
+        },
+        {
+          text: "Aldea del viento",
+          correct: false,
+        },
+      ],
+    },
   ];
 
   const moneyPyramid = [
@@ -246,16 +358,16 @@ function App() {
     { id: 8, amount: "$1400" },
     { id: 9, amount: "$1700" },
     { id: 10, amount: "$2000" },
-    { id: 11, amount: "$1100" },
-    { id: 12, amount: "$1200" },
-    { id: 13, amount: "$1300" },
-    { id: 14, amount: "$1400" },
-    { id: 15, amount: "$1500" },
+    { id: 11, amount: "$2500" },
+    { id: 12, amount: "$3000" },
+    { id: 13, amount: "$3500" },
+    { id: 14, amount: "$4000" },
+    { id: 15, amount: "$5000" },
   ].reverse();
 
   const restar = () => {
-    window.location.reload()
-  }
+    window.location.reload();
+  };
 
   return (
     <div className="app">
