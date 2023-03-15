@@ -5,16 +5,16 @@ import Start from "./componentes/Start";
 import Timer from "./componentes/Timer";
 
 function App() {
-
   const [username, setUsername] = useState(null);
   const [timeOut, setTimeOut] = useState(false);
   const [questionNumber, setQuestionNumber] = useState(1);
-  const [earned,] = useState("$ 0");
+  const [earned] = useState("$ 0");
 
   const data = [
     {
       id: 1,
-      question: "¿En que pelicula de Marvel aparece el hombre araña por primera vez?",
+      question:
+        "¿En que pelicula de Marvel aparece el hombre araña por primera vez?",
       answers: [
         {
           text: "Civil war",
@@ -102,7 +102,8 @@ function App() {
     },
     {
       id: 5,
-      question: "¿Cual es la transformación de goku que tiene el pelo mas largo?",
+      question:
+        "¿Cual es la transformación de goku que tiene el pelo mas largo?",
       answers: [
         {
           text: "SSJ(F1)",
@@ -235,22 +236,26 @@ function App() {
   ];
 
   const moneyPyramid = [
-    { id:1, amount: "$100"},
-    { id:2, amount: "$200"},
-    { id:3, amount: "$400"},
-    { id:4, amount: "$600"},
-    { id:5, amount: "$800"},
-    { id:6, amount: "$1000"},
-    { id:7, amount: "$1200"},
-    { id:8, amount: "$1400"},
-    { id:9, amount: "$1700"},
-    { id:10, amount: "$2000"},
-    { id:11, amount: "$1100"},
-    { id:12, amount: "$1200"},
-    { id:13, amount: "$1300"},
-    { id:14, amount: "$1400"},
-    { id:15, amount: "$1500"},
+    { id: 1, amount: "$100" },
+    { id: 2, amount: "$200" },
+    { id: 3, amount: "$400" },
+    { id: 4, amount: "$600" },
+    { id: 5, amount: "$800" },
+    { id: 6, amount: "$1000" },
+    { id: 7, amount: "$1200" },
+    { id: 8, amount: "$1400" },
+    { id: 9, amount: "$1700" },
+    { id: 10, amount: "$2000" },
+    { id: 11, amount: "$1100" },
+    { id: 12, amount: "$1200" },
+    { id: 13, amount: "$1300" },
+    { id: 14, amount: "$1400" },
+    { id: 15, amount: "$1500" },
   ].reverse();
+
+  const restar = () => {
+    window.location.reload()
+  }
 
   return (
     <div className="app">
@@ -260,7 +265,12 @@ function App() {
         <>
           <div className="main">
             {timeOut ? (
-              <h1 className="endText">Te ganaste: {earned}</h1>
+              <>
+                <button className="button_main" onClick={restar}>
+                  Reiniciar
+                </button>
+                <h1 className="endText">Te ganaste: {earned}</h1>
+              </>
             ) : (
               <>
                 <div className="top">
@@ -284,13 +294,14 @@ function App() {
           </div>
           <div className="pyramid">
             <ul className="moneyList">
-              {moneyPyramid.map((m) => (
+              {moneyPyramid.map((m, index) => (
                 <li
                   className={
                     questionNumber === m.id
                       ? "moneyListItem active"
                       : "moneyListItem"
                   }
+                  key={index}
                 >
                   <span className="moneyListItemNumber">{m.id}</span>
                   <span className="moneyListItemAmount">{m.amount}</span>
